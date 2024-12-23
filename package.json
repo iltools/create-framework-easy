@@ -6,7 +6,8 @@
     "dev": "unbuild --stub",
     "build": "unbuild",
     "release": "release-it",
-    "release_github": "dotenv release-it --"
+    "release_github": "dotenv release-it --",
+    "release_github_read": "read -p 'GITHUB_TOKEN: ' GITHUB_TOKEN && export GITHUB_TOKEN=$GITHUB_TOKEN && release-it"
   },
   "bin": {
     "create-ui-easy": "index.js"
