@@ -5,8 +5,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "unbuild --stub",
     "build": "unbuild",
-    "release": "dotenv release-it --",
-    "release_read": "read -p 'GITHUB_TOKEN: ' GITHUB_TOKEN && export GITHUB_TOKEN=$GITHUB_TOKEN && release-it"
+    "release": "dotenv release-it"
   },
   "bin": {
     "create-ui-easy": "index.js"
