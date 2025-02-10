@@ -1,13 +1,16 @@
-import path from 'path';
+import path, {dirname} from 'path';
 import chalk from 'chalk';
 import prompts from 'prompts'
 import LANGS, {DEFAULT_LANG} from './locales/index.js';
 import repositories from './repositories.js'
 import fs from 'fs-extra'
+import { fileURLToPath } from 'url'
 import { initCA, initCert, writeCert } from "../mkcert/index.js";
 import { getAllBranches, downloadProcess } from './git.js';
 const LANGUATE = LANGS[DEFAULT_LANG]
 // process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const creatorPrompt = {
   step0 (params) {
     const { projectName = '' } = params
