@@ -22,7 +22,6 @@ program
   // .option('-f, --force', 'overwrite target directory if it is existed')
   .action(async (projectName, options, cmd) => {
     // 处理用户输入create 指令附加的参数
-    console.log(projectName, options)
     const creator = new Creator(projectName, options, cmd)
     creator.init()
   });
