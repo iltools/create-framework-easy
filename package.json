@@ -15,7 +15,8 @@
   "license": "MIT",
   "description": "",
   "files": [
-    "dist"
+    "dist",
+    "index.js"
   ],
   "devDependencies": {
     "@release-it/conventional-changelog": "^9.0.3",
