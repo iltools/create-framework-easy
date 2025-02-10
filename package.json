@@ -11,9 +11,12 @@
     "create-framework-easy": "index.js"
   },
   "type": "module",
-  "author": "",
+  "author": "iltools",
   "license": "MIT",
   "description": "",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@release-it/conventional-changelog": "^9.0.3",
     "chalk": "^5.3.0",
