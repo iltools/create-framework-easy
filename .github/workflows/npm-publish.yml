@@ -25,6 +25,7 @@ jobs:
         with:
           name: build-output
           path: dist
+      - run: ls
 
   publish-npm:
     needs: build
@@ -36,11 +37,13 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       # Get the dist folder
+      - run: ls
       - name: Download Build Folder
         uses: actions/download-artifact@v4
         with:
           name: build-output
           path: ./
+      - run: ls
       - run: ls dist
       - run: npm publish
         env:
