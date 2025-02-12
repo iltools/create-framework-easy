@@ -9,7 +9,7 @@ import { initCA, initCert, writeCert } from "../mkcert/index.js";
 import { getAllBranches, downloadProcess } from './git.js';
 const LANGUATE = LANGS[DEFAULT_LANG]
 // process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
-//  fix: package.json使用type=module时，__dirname和__filename is undefined
+// fix: package.json使用type=module时，__dirname和__filename is undefined
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const creatorPrompt = {
