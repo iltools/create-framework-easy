@@ -16,6 +16,7 @@
   "description": "",
   "files": [
     "dist",
+    "src/framework",
     "index.js"
   ],
   "devDependencies": {
