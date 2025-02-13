@@ -122,15 +122,19 @@ class Creator {
   afterDownload = async (params = {}) => {
     const {framework, defaultBranch}  = params || {}
     const projectDir = path.resolve(process.cwd(), this.projectName)
-    const libsDir = path.resolve(__dirname, '../')
+    const libsDir = path.resolve(__dirname, '../src')
+    console.log(libsDir, '----------------aaa----------------')
     const frameworkDir = path.join(libsDir, 'framework')
+    console.log(frameworkDir, '------------bbb--------------------')
     let fileRes
     function getFile () {
       return new Promise((resolve, reject) => {
         import(`${frameworkDir}/${framework}.js`).then((res) => {
           fileRes = res
+          console.log(res, '------------res--------------------')
           resolve(res)
         }).catch(e => {
+          console.log(e, '------------catch--------------------')
           reject(e)
         })
       })
