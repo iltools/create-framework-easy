@@ -4,12 +4,12 @@ import prompts from 'prompts'
 import LANGS, {DEFAULT_LANG} from './locales/index.js';
 import repositories from './repositories.js'
 import fs from 'fs-extra'
-import { fileURLToPath, pathToFileURL } from 'url'
+import { fileURLToPath } from 'url'
 import { initCA, initCert, writeCert } from "../mkcert/index.js";
 import { getAllBranches, downloadProcess } from './git.js';
 const LANGUATE = LANGS[DEFAULT_LANG]
 // process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
-// fix: package.json使用type=module时，__dirname和__filename is undefined
+//  fix: package.json使用type=module时，__dirname和__filename is undefined
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const creatorPrompt = {
@@ -122,8 +122,8 @@ class Creator {
   afterDownload = async (params = {}) => {
     const {framework, defaultBranch}  = params || {}
     const projectDir = path.resolve(process.cwd(), this.projectName)
-    const libsDir = path.resolve(__dirname, '../src')
-    const frameworkDir = pathToFileURL(path.join(libsDir, 'framework'))
+    const libsDir = path.resolve(__dirname, '../')
+    const frameworkDir = path.join(libsDir, 'framework')
     let fileRes
     function getFile () {
       return new Promise((resolve, reject) => {
@@ -131,7 +131,6 @@ class Creator {
           fileRes = res
           resolve(res)
         }).catch(e => {
-
           reject(e)
         })
       })
