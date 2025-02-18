@@ -4,7 +4,7 @@ import prompts from 'prompts'
 import LANGS, {DEFAULT_LANG} from './locales/index.js';
 import repositories from './repositories.js'
 import fs from 'fs-extra'
-import { fileURLToPath, pathToFileURL } from 'url'
+import { fileURLToPath } from 'url'
 import { initCA, initCert, writeCert } from "../mkcert/index.js";
 import { getAllBranches, downloadProcess } from './git.js';
 const LANGUATE = LANGS[DEFAULT_LANG]
@@ -122,8 +122,8 @@ class Creator {
   afterDownload = async (params = {}) => {
     const {framework, defaultBranch}  = params || {}
     const projectDir = path.resolve(process.cwd(), this.projectName)
-    const libsDir = path.resolve(__dirname, '../src')
-    const frameworkDir = pathToFileURL(path.join(libsDir, 'framework'))
+    const libsDir = path.resolve(__dirname, '../')
+    const frameworkDir = path.join(libsDir, 'framework')
     let fileRes
     function getFile () {
       return new Promise((resolve, reject) => {
@@ -131,7 +131,6 @@ class Creator {
           fileRes = res
           resolve(res)
         }).catch(e => {
-
           reject(e)
         })
       })
