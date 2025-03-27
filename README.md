@@ -1,5 +1,5 @@
 # How to use
 
 ```
-create-framework-easy create projectName  
+create-framework-easy create projectName
 ```
